@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Make a donation to support Less Fortunate Charity programs.">
+    <title>Donate - Less Fortunate Charity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="color: inherit; text-decoration: none;">Less Fortunate Charity</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate active">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Make a Donation</h1>
+            <p>Your generosity transforms lives and strengthens our community</p>
+        </div>
+    </section>
+
+    <!-- Donation Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="donation-container">
+                <div class="donation-info">
+                    <h2>How Your Donation Helps</h2>
+                    <p>Every dollar you contribute directly supports our programs and services that help vulnerable members of our community. Your generosity makes real, lasting change.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Impact Examples:</h3>
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <strong>$25</strong>
+                            <p>Provides meals for a family for 2 days</p>
+                        </div>
+                        <div class="impact-item">
+                            <strong>$50</strong>
+                            <p>Funds tutoring for a student for one semester</p>
+                        </div>
+                        <div class="impact-item">
+                            <strong>$100</strong>
+                            <p>Covers utility bills for a family in crisis</p>
+                        </div>
+                        <div class="impact-item">
+                            <strong>$250</strong>
+                            <p>All books and supplies for a scholarship student</p>
+                        </div>
+                        <div class="impact-item">
+                            <strong>$500</strong>
+                            <p>Month of rent assistance for a family</p>
+                        </div>
+                        <div class="impact-item">
+                            <strong>$1,000+</strong>
+                            <p>Emergency relief package for families in crisis</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box" style="margin-top: 2rem;">
+                        <h3>Why Support Us?</h3>
+                        <ul class="feature-list">
+                            <li>✓ 501(c)(3) registered nonprofit - donations are tax-deductible</li>
+                            <li>✓ Transparent use of funds - 90% goes directly to programs</li>
+                            <li>✓ Proven impact - documented success in education, employment, and assistance</li>
+                            <li>✓ Trusted leadership - led by dedicated community members</li>
+                            <li>✓ Regular updates - quarterly impact reports and newsletters</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="donation-form-container">
+                    <h2>Choose Your Donation Amount</h2>
+                    <form class="donation-form" id="donationForm">
+                        <div class="donation-options">
+                            <label class="donation-option">
+                                <input type="radio" name="amount" value="25" checked>
+                                <span class="option-amount">$25</span>
+                                <span class="option-text">Meal Support</span>
+                            </label>
+                            <label class="donation-option">
+                                <input type="radio" name="amount" value="50">
+                                <span class="option-amount">$50</span>
+                                <span class="option-text">Education</span>
+                            </label>
+                            <label class="donation-option">
+                                <input type="radio" name="amount" value="100">
+                                <span class="option-amount">$100</span>
+                                <span class="option-text">Emergency Fund</span>
+                            </label>
+                            <label class="donation-option">
+                                <input type="radio" name="amount" value="250">
+                                <span class="option-amount">$250</span>
+                                <span class="option-text">Scholarship</span>
+                            </label>
+                            <label class="donation-option">
+                                <input type="radio" name="amount" value="500">
+                                <span class="option-amount">$500</span>
+                                <span class="option-text">Family Support</span>
+                            </label>
+                        </div>
+
+                        <div class="custom-amount">
+                            <label for="customAmount">Or enter custom amount:</label>
+                            <div class="input-group">
+                                <span class="currency">$</span>
+                                <input type="number" id="customAmount" name="customAmount" placeholder="1000" min="1" step="1">
+                            </div>
+                        </div>
+
+                        <div class="donation-type">
+                            <label>Donation Type:</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="type" value="one-time" checked>
+                                    One-time Donation
+                                </label>
+                                <label>
+                                    <input type="radio" name="type" value="monthly">
+                                    Monthly Recurring
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-lg">Proceed to Payment</button>
+                        
+                        <hr style="margin: 2rem 0; border: none; border-top: 1px solid #E8E8E8;">
+
+                        <p style="text-align: center; color: #7F8C8D; font-size: 0.9rem;">
+                            We accept credit cards, debit cards, and bank transfers through our secure payment processor.
+                        </p>
+
+                        <p style="text-align: center; font-size: 0.85rem; margin-top: 1rem;">
+                            🔒 Your donation is secure and encrypted. We do not store credit card information.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Methods -->
+    <section class="content-section light-bg">
+        <div class="container">
+            <h2 class="section-title-center">Other Ways to Give</h2>
+            <div class="three-column">
+                <div class="giving-method">
+                    <h3>💳 Online Donation</h3>
+                    <p>Quick and secure donations through our website. Instant confirmation and tax receipt.</p>
+                </div>
+                <div class="giving-method">
+                    <h3>📧 Bank Transfer</h3>
+                    <p>For large donations or recurring support. Contact us at <a href="mailto:info@LESSFORTUNATE.us">info@LESSFORTUNATE.us</a></p>
+                </div>
+                <div class="giving-method">
+                    <h3>📮 Mail a Check</h3>
+                    <p>Mail checks to: Less Fortunate Charity, 2132 E 72nd St, Chicago, IL 60649</p>
+                </div>
+                <div class="giving-method">
+                    <h3>🤝 Corporate Partnerships</h3>
+                    <p>Interested in corporate giving? Let's discuss partnership opportunities.</p>
+                </div>
+                <div class="giving-method">
+                    <h3>🏠 In-kind Donations</h3>
+                    <p>We accept donations of supplies, clothing, furniture, and other items.</p>
+                </div>
+                <div class="giving-method">
+                    <h3>⏰ Volunteer Your Time</h3>
+                    <p>Your time and expertise are invaluable. <a href="contact.html">Join our volunteer team</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Donation -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title-center">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>Is my donation tax-deductible?</h4>
+                    <p>Yes! Less Fortunate Charity is a 501(c)(3) registered nonprofit organization (EIN: 99-3459999). All donations are tax-deductible. You'll receive a tax receipt via email.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How is my donation used?</h4>
+                    <p>90% of donations go directly to programs and services. The remaining 10% supports operational costs. We provide quarterly impact reports detailing how funds are used.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I cancel a recurring donation?</h4>
+                    <p>Yes! You can cancel anytime by contacting us at <a href="mailto:info@LESSFORTUNATE.us">info@LESSFORTUNATE.us</a> or managing your subscription.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is my payment information secure?</h4>
+                    <p>Absolutely. We use industry-standard encryption and PCI-compliant payment processors. Your information is never stored on our servers.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What payment methods do you accept?</h4>
+                    <p>We accept all major credit cards, debit cards, PayPal, and bank transfers. Check with us for other payment options.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem;">
+                Have more questions? <a href="contact.html">Contact us</a> or visit our <a href="faq.html">FAQ page</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Less Fortunate Charity</h4>
+                    <p>Making a positive impact in Chicago and beyond</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/lessfortunatecharity" class="social-icon" title="Facebook">f</a>
+                        <a href="https://twitter.com/lessfortunate" class="social-icon" title="Twitter">𝕏</a>
+                        <a href="https://instagram.com/lessfortunatecharity" class="social-icon" title="Instagram">📷</a>
+                        <a href="https://linkedin.com/company/lessfortunatecharity" class="social-icon" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> <a href="mailto:info@LESSFORTUNATE.us">info@LESSFORTUNATE.us</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+1-312-555-0100">(312) 555-0100</a></li>
+                        <li><strong>Address:</strong> 2132 E 72nd St, Chicago, IL 60649</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Less Fortunate Charity. EIN: 99-3459999 | All rights reserved.</p>
+                <p>A 501(c)(3) registered nonprofit organization | <a href="https://LESSFORTUNATE.us">https://LESSFORTUNATE.us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
