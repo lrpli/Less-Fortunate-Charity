@@ -43,6 +43,46 @@ a {
 }
 
 /* ============================================
+   TOP BAR
+   ============================================ */
+
+.top-bar {
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+.top-bar-divider {
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    .top-bar .container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+}
+
+/* ============================================
    NAVIGATION
    ============================================ */
 
@@ -139,6 +179,19 @@ a {
     margin-bottom: 2rem;
     opacity: 0.95;
     animation: slideUp 0.8s ease 0.2s both;
+}
+
+.hero-contact {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}
+
+.hero-contact a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .cta-button {
