@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Volunteer with Less Fortunate Charity and make a real difference in Chicago.">
+    <title>Volunteer - Less Fortunate Charity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .volunteer-grid { grid-template-columns: 1fr; }
+        }
+        .role-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .role-cards { grid-template-columns: 1fr; }
+        }
+        .role-card {
+            background: var(--white);
+            border: 2px solid var(--light-bg2);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        .role-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+        .role-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .role-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .role-card p {
+            font-size: 0.88rem;
+            color: var(--mid-text);
+            line-height: 1.6;
+        }
+        .commitment-badge {
+            display: inline-block;
+            background: var(--light-bg2);
+            color: var(--primary-dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-pill);
+            margin-top: 0.5rem;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--light-bg);
+            font-size: 0.95rem;
+        }
+        .benefits-list li:last-child { border-bottom: none; }
+        .benefits-list .check {
+            color: var(--secondary-color);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .process-steps { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .process-steps { grid-template-columns: 1fr; }
+        }
+        .step-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        .step-number {
+            width: 52px;
+            height: 52px;
+            background: var(--gradient);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .step-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .step-card p {
+            font-size: 0.85rem;
+            color: var(--mid-text);
+        }
+        .volunteer-form-wrap {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+        .volunteer-form-wrap h2 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        .volunteer-form-wrap p.subtitle {
+            color: var(--mid-text);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 0.4rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: var(--radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            background: var(--white);
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.12);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .checkbox-grid { grid-template-columns: 1fr; }
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            accent-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a>
+            <span class="top-bar-divider">|</span>
+            <a href="https://lessfortunate.us">lessfortunate.us</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="color: inherit; text-decoration: none;">Less Fortunate Charity</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="volunteer.html" class="active">Volunteer</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Volunteer With Us</h1>
+            <p>Your time and talents can change lives — join our community of dedicated volunteers</p>
+        </div>
+    </section>
+
+    <!-- Why Volunteer -->
+    <section class="content-section">
+        <div class="container">
+            <div class="volunteer-grid">
+                <div>
+                    <h2>Make a Real Difference</h2>
+                    <p>Volunteers are the backbone of Less Fortunate Charity. Without the generous contribution of time and skills from people like you, we simply could not serve the hundreds of families and individuals who depend on our programs each year.</p>
+                    <p style="margin-top: 1rem;">Whether you have a few hours a month or a few hours a week, there is a meaningful role for you here. Our volunteers come from all walks of life and bring a wide range of skills — all united by a shared desire to lift others up.</p>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-dark);">Benefits of Volunteering</h3>
+                    <ul class="benefits-list">
+                        <li><span class="check">✓</span> Make a tangible impact in the Chicago community</li>
+                        <li><span class="check">✓</span> Build new skills and gain valuable experience</li>
+                        <li><span class="check">✓</span> Receive volunteer training and ongoing support</li>
+                        <li><span class="check">✓</span> Earn a certificate of service for your records</li>
+                        <li><span class="check">✓</span> Connect with like-minded community members</li>
+                        <li><span class="check">✓</span> Flexible scheduling to fit your lifestyle</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="info-box">
+                        <h3>Volunteer at a Glance</h3>
+                        <p><strong>Minimum Age:</strong> 16 years old (under 18 with parental consent)</p>
+                        <p style="margin-top: 0.75rem;"><strong>Commitment:</strong> As little as 2 hours/month</p>
+                        <p style="margin-top: 0.75rem;"><strong>Training:</strong> Free orientation provided for all volunteers</p>
+                        <p style="margin-top: 0.75rem;"><strong>Background Check:</strong> Required for roles working directly with youth or vulnerable adults</p>
+                        <p style="margin-top: 0.75rem;"><strong>Location:</strong> 2132 E 72nd St, Chicago, IL 60649 (and remote options available)</p>
+                        <p style="margin-top: 1.25rem;"><a href="mailto:info@lessfortunate.us" class="btn-primary" style="display: inline-block;">Email Us to Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Roles -->
+    <section class="content-section light-bg">
+        <div class="container">
+            <h2 class="section-title-center">Open Volunteer Roles</h2>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 0.5rem; color: var(--mid-text);">We have opportunities for every schedule and skill set. Browse our current openings below.</p>
+
+            <div class="role-cards">
+                <div class="role-card">
+                    <div class="role-icon">📚</div>
+                    <h3>Tutor & Academic Mentor</h3>
+                    <p>Help K–12 students with homework, reading, and college prep. No teaching certification required — just patience and a love of learning.</p>
+                    <span class="commitment-badge">2–4 hrs/week</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🍱</div>
+                    <h3>Food Distribution Assistant</h3>
+                    <p>Help sort, pack, and distribute food donations at our community food drives and distribution events held throughout the year.</p>
+                    <span class="commitment-badge">Event-based</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">💼</div>
+                    <h3>Career Coach</h3>
+                    <p>Share your professional expertise to help job seekers with resume writing, interview prep, and career guidance.</p>
+                    <span class="commitment-badge">1–2 hrs/week</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">📣</div>
+                    <h3>Community Outreach Volunteer</h3>
+                    <p>Help spread awareness about our programs by attending community events, distributing materials, and engaging with local organizations.</p>
+                    <span class="commitment-badge">Flexible</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">💻</div>
+                    <h3>Digital & Admin Support</h3>
+                    <p>Assist with social media, data entry, grant research, or website updates. Many of these roles can be done remotely from home.</p>
+                    <span class="commitment-badge">Remote friendly</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🎉</div>
+                    <h3>Event Organizer</h3>
+                    <p>Help plan and run fundraising events, community celebrations, and awareness campaigns throughout the year.</p>
+                    <span class="commitment-badge">Project-based</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🏥</div>
+                    <h3>Health & Wellness Aide</h3>
+                    <p>Support our health resource fairs, assist with wellness workshops, and help connect community members to healthcare services.</p>
+                    <span class="commitment-badge">Monthly events</span>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🤝</div>
+                    <h3>Peer Support Advocate</h3>
+                    <p>Provide compassionate, non-clinical peer support to individuals navigating difficult life circumstances. Training provided.</p>
+                    <span class="commitment-badge">2 hrs/week</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title-center">How to Get Started</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Apply Online</h3>
+                    <p>Fill out the volunteer application form below. It takes less than 5 minutes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>We'll Reach Out</h3>
+                    <p>Our volunteer coordinator will contact you within 3 business days to discuss your interests.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Attend Orientation</h3>
+                    <p>Join our free orientation session to learn about our mission, values, and volunteer expectations.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Start Making a Difference</h3>
+                    <p>Get matched with a role and begin contributing to a stronger Chicago community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Application Form -->
+    <section class="content-section light-bg" id="apply">
+        <div class="container" style="max-width: 780px;">
+            <div class="volunteer-form-wrap">
+                <h2>Volunteer Application</h2>
+                <p class="subtitle">Ready to join us? Tell us a little about yourself and we will be in touch soon.</p>
+
+                <form id="volunteerForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vFirstName">First Name *</label>
+                            <input type="text" id="vFirstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vLastName">Last Name *</label>
+                            <input type="text" id="vLastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vEmail">Email Address *</label>
+                            <input type="email" id="vEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vPhone">Phone Number</label>
+                            <input type="tel" id="vPhone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vAge">Age Group *</label>
+                            <select id="vAge" name="age" required>
+                                <option value="">Select age group</option>
+                                <option value="16-17">16–17 (with parental consent)</option>
+                                <option value="18-24">18–24</option>
+                                <option value="25-34">25–34</option>
+                                <option value="35-49">35–49</option>
+                                <option value="50+">50+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vAvailability">Availability *</label>
+                            <select id="vAvailability" name="availability" required>
+                                <option value="">Select availability</option>
+                                <option value="weekday-morning">Weekday mornings</option>
+                                <option value="weekday-afternoon">Weekday afternoons</option>
+                                <option value="weekday-evening">Weekday evenings</option>
+                                <option value="weekend">Weekends</option>
+                                <option value="flexible">Flexible / event-based</option>
+                                <option value="remote">Remote only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Areas of Interest (select all that apply)</label>
+                        <div class="checkbox-grid" style="margin-top: 0.5rem;">
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="tutoring"> Tutoring & Mentoring</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="food"> Food Distribution</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="career"> Career Coaching</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="outreach"> Community Outreach</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="admin"> Digital & Admin Support</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="events"> Event Organization</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="health"> Health & Wellness</label>
+                            <label class="checkbox-item"><input type="checkbox" name="interest" value="other"> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vSkills">Relevant Skills or Experience</label>
+                        <textarea id="vSkills" name="skills" rows="3" placeholder="e.g., teaching, social work, graphic design, bilingual (Spanish)..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vWhy">Why do you want to volunteer with us? *</label>
+                        <textarea id="vWhy" name="why" rows="4" required placeholder="Tell us a bit about your motivation to volunteer..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-lg" style="width: 100%;">Submit Application</button>
+                    <p style="text-align: center; font-size: 0.85rem; color: var(--mid-text); margin-top: 1rem;">We will respond within 3 business days. Questions? Email <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="content-section">
+        <div class="container" style="max-width: 840px;">
+            <h2 class="section-title-center">Hear From Our Volunteers</h2>
+            <div class="three-column" style="margin-top: 2rem;">
+                <div class="value-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">👩‍🏫</div>
+                    <p style="font-style: italic; color: var(--mid-text); font-size: 0.95rem;">"Tutoring the kids here has been the most rewarding thing I've done outside of my own family. These students are so eager to learn."</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.85rem; color: var(--primary-dark);">— Maria T., Tutor Volunteer</p>
+                </div>
+                <div class="value-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">👨‍💼</div>
+                    <p style="font-style: italic; color: var(--mid-text); font-size: 0.95rem;">"I came in to help with career coaching and ended up learning so much myself. The team here is incredibly welcoming and organized."</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.85rem; color: var(--primary-dark);">— James R., Career Coach Volunteer</p>
+                </div>
+                <div class="value-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">👩‍💻</div>
+                    <p style="font-style: italic; color: var(--mid-text); font-size: 0.95rem;">"Working remotely on digital support lets me contribute meaningfully without leaving home. Perfect for my schedule as a parent."</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.85rem; color: var(--primary-dark);">— Yolanda S., Digital Volunteer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section-full">
+        <div class="container">
+            <h2>Ready to Join Our Team?</h2>
+            <p>Every hour you give makes a lasting difference in someone's life</p>
+            <div class="cta-buttons">
+                <a href="#apply" class="btn-primary">Apply to Volunteer</a>
+                <a href="contact.html" class="btn-secondary">Contact Us First</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Less Fortunate Charity</h4>
+                    <p>Making a positive impact in Chicago and beyond</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="impact.html">Impact Stories</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></li>
+                        <li><strong>Website:</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+1-312-555-0100">(312) 555-0100</a></li>
+                        <li><strong>Address:</strong> 2132 E 72nd St, Chicago, IL 60649</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Less Fortunate Charity. EIN: 99-3459999 | All rights reserved.</p>
+                <p>A 501(c)(3) registered nonprofit organization | <a href="https://lessfortunate.us">https://lessfortunate.us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

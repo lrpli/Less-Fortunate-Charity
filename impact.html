@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read real impact stories from the families and individuals whose lives have been changed by Less Fortunate Charity.">
+    <title>Impact Stories - Less Fortunate Charity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .impact-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .impact-hero-stats { grid-template-columns: 1fr 1fr; }
+        }
+        .impact-big-stat {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+        .impact-big-stat .number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            display: block;
+        }
+        .impact-big-stat .label {
+            font-size: 0.82rem;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+        .story-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            display: flex;
+            gap: 0;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+        .story-card:hover { box-shadow: var(--shadow); }
+        .story-card.reverse { flex-direction: row-reverse; }
+        .story-visual {
+            min-width: 280px;
+            max-width: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .story-card, .story-card.reverse { flex-direction: column; }
+            .story-visual { min-width: unset; max-width: unset; min-height: 160px; }
+        }
+        .story-visual-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.85);
+        }
+        .story-content {
+            padding: 2.5rem;
+            flex: 1;
+        }
+        .story-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 0.75rem;
+            border-radius: var(--radius-pill);
+            margin-bottom: 1rem;
+        }
+        .tag-edu { background: #EBF5FB; color: #1A6E8E; }
+        .tag-job { background: #E6F4F0; color: #05956E; }
+        .tag-emergency { background: #FEF3EC; color: #E05A2B; }
+        .tag-health { background: #F3EBF9; color: #6B46C1; }
+        .story-content blockquote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--primary-dark);
+            border-left: 4px solid var(--primary-light);
+            padding-left: 1.25rem;
+            margin: 1.25rem 0;
+            line-height: 1.7;
+        }
+        .story-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+        .story-content p {
+            font-size: 0.93rem;
+            color: var(--mid-text);
+            line-height: 1.75;
+        }
+        .story-content p + p { margin-top: 0.75rem; }
+        .story-attribution {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        .attr-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+        .attr-info .name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--dark-text);
+        }
+        .attr-info .meta {
+            font-size: 0.78rem;
+            color: var(--light-text);
+        }
+        .annual-report-box {
+            background: var(--light-bg);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .annual-report-box { flex-direction: column; text-align: center; }
+        }
+        .report-icon {
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+        .report-text h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        .report-text p {
+            color: var(--mid-text);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+        .metric-bar-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .metric-bar-card h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.75rem;
+        }
+        .bar-track {
+            background: var(--light-bg);
+            border-radius: var(--radius-pill);
+            height: 10px;
+            margin-bottom: 0.4rem;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: var(--radius-pill);
+            background: var(--gradient);
+            transition: width 1s ease;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: var(--mid-text);
+        }
+        .bar-label .pct {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a>
+            <span class="top-bar-divider">|</span>
+            <a href="https://lessfortunate.us">lessfortunate.us</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="color: inherit; text-decoration: none;">Less Fortunate Charity</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero with Stats -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Impact Stories</h1>
+            <p>Every number represents a person. Every story is proof that together, we make a difference.</p>
+            <div class="impact-hero-stats">
+                <div class="impact-big-stat">
+                    <span class="number">500+</span>
+                    <span class="label">Lives Directly Impacted</span>
+                </div>
+                <div class="impact-big-stat">
+                    <span class="number">100+</span>
+                    <span class="label">Families Stabilized</span>
+                </div>
+                <div class="impact-big-stat">
+                    <span class="number">82%</span>
+                    <span class="label">Job Placement Rate</span>
+                </div>
+                <div class="impact-big-stat">
+                    <span class="number">2,500+</span>
+                    <span class="label">Students Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title-center">Stories of Change</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; color: var(--mid-text);">These stories are shared with the permission of the individuals involved. Names have been changed to protect privacy.</p>
+
+            <!-- Story 1 -->
+            <div class="story-card">
+                <div class="story-visual pal-2">
+                    <span>👨‍💼</span>
+                    <span class="story-visual-label">Job Training</span>
+                </div>
+                <div class="story-content">
+                    <span class="story-tag tag-job">Job Training Program</span>
+                    <h3>Darnell: From Surviving to Thriving</h3>
+                    <blockquote>"Before Less Fortunate Charity, I had given up on ever finding stable work. Now I have a full-time job, my own apartment, and I'm saving money for the first time in my life."</blockquote>
+                    <p>Darnell came to us in early 2025 after losing his job during an economic downturn. With two children depending on him and an eviction notice on his door, he was at a breaking point. Through our Emergency Assistance program, we helped stabilize his housing. He then enrolled in our 12-week Job Readiness Workshop.</p>
+                    <p>Within five months of completing the program, Darnell secured a full-time position as a facilities coordinator earning a living wage. He is now one of our volunteer mentors, helping others navigate the same path he walked.</p>
+                    <div class="story-attribution">
+                        <div class="attr-avatar avatar-green">D</div>
+                        <div class="attr-info">
+                            <div class="name">Darnell W.</div>
+                            <div class="meta">Job Training Graduate, 2025 &nbsp;·&nbsp; Chicago South Side</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card reverse">
+                <div class="story-visual pal-1">
+                    <span>🎓</span>
+                    <span class="story-visual-label">Education</span>
+                </div>
+                <div class="story-content">
+                    <span class="story-tag tag-edu">Education Support Program</span>
+                    <h3>Kezia: First in Her Family to Go to College</h3>
+                    <blockquote>"I never thought college was possible for someone like me. The scholarship and mentorship I received changed everything — not just for me, but for my whole family."</blockquote>
+                    <p>Kezia grew up in a household where making ends meet was a constant struggle. A straight-A student with enormous potential but no financial pathway to higher education, she nearly resigned herself to bypassing college entirely.</p>
+                    <p>A school counselor connected her to our Education Support Program. Kezia received a full scholarship, one-on-one college application coaching, and an academic mentor. She was accepted to three universities and chose to study nursing — a career she says will let her give back to her community the way we gave back to her.</p>
+                    <div class="story-attribution">
+                        <div class="attr-avatar avatar-teal">K</div>
+                        <div class="attr-info">
+                            <div class="name">Kezia A.</div>
+                            <div class="meta">Scholarship Recipient, 2025 &nbsp;·&nbsp; Enrolled at University of Illinois Chicago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card">
+                <div class="story-visual pal-3">
+                    <span>👨‍👩‍👧</span>
+                    <span class="story-visual-label">Emergency Assistance</span>
+                </div>
+                <div class="story-content">
+                    <span class="story-tag tag-emergency">Emergency Assistance</span>
+                    <h3>The Rivera Family: Kept Together When It Mattered Most</h3>
+                    <blockquote>"We had three days before we would have been on the street. One phone call to Less Fortunate Charity changed everything for us."</blockquote>
+                    <p>Maria and Carlos Rivera contacted us in desperation — a medical emergency had wiped out their savings, and they were three months behind on rent with two young children and a third on the way. Their landlord had already filed for eviction.</p>
+                    <p>Within 48 hours, our case manager connected them with emergency rental assistance, a local food pantry, and a healthcare navigator to help manage Carlos's ongoing medical bills. The family remained housed. Six months later, they are financially stable, and Maria has enrolled in our job training program to increase the family's income.</p>
+                    <div class="story-attribution">
+                        <div class="attr-avatar avatar-orange">R</div>
+                        <div class="attr-info">
+                            <div class="name">The Rivera Family</div>
+                            <div class="meta">Emergency Assistance Recipients, 2025 &nbsp;·&nbsp; Chicago, IL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="story-card reverse">
+                <div class="story-visual pal-4">
+                    <span>🧘</span>
+                    <span class="story-visual-label">Health & Wellness</span>
+                </div>
+                <div class="story-content">
+                    <span class="story-tag tag-health">Health & Wellness Program</span>
+                    <h3>Tamika: Finding Support She Didn't Know Existed</h3>
+                    <blockquote>"I had been suffering in silence for years. At the health fair, someone finally listened — and pointed me toward resources that actually helped."</blockquote>
+                    <p>Tamika had been experiencing symptoms of depression and anxiety for several years but lacked both health insurance and knowledge of available resources. She attended our Community Health Fair on a whim, expecting it to be just about physical health checkups.</p>
+                    <p>Instead, she connected with a mental health outreach worker who helped her access free counseling through a partner organization, enroll in Medicaid, and join a weekly wellness group. Tamika says it was the first time in years she felt hopeful. She is now a regular volunteer at our health events.</p>
+                    <div class="story-attribution">
+                        <div class="attr-avatar avatar-purple">T</div>
+                        <div class="attr-info">
+                            <div class="name">Tamika B.</div>
+                            <div class="meta">Health Program Participant, 2025 &nbsp;·&nbsp; Now a Health Volunteer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Metrics -->
+    <section class="content-section light-bg">
+        <div class="container">
+            <h2 class="section-title-center">Our Programs by the Numbers</h2>
+            <p style="text-align: center; max-width: 580px; margin: 0 auto 1rem; color: var(--mid-text);">Transparent, measurable outcomes from each of our core program areas.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-bar-card">
+                    <h4>Emergency Assistance — Families Stabilized</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                    <div class="bar-label"><span>88% retained stable housing</span><span class="pct">88%</span></div>
+                </div>
+                <div class="metric-bar-card">
+                    <h4>Job Training — Employment Rate</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+                    <div class="bar-label"><span>Employed within 6 months</span><span class="pct">82%</span></div>
+                </div>
+                <div class="metric-bar-card">
+                    <h4>Education — Academic Improvement</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 91%;"></div></div>
+                    <div class="bar-label"><span>Students improved grades</span><span class="pct">91%</span></div>
+                </div>
+                <div class="metric-bar-card">
+                    <h4>Scholarships — College Enrollment</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+                    <div class="bar-label"><span>Recipients enrolled in college</span><span class="pct">100%</span></div>
+                </div>
+                <div class="metric-bar-card">
+                    <h4>Health Fair — Connected to Care</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 74%;"></div></div>
+                    <div class="bar-label"><span>Attendees connected to provider</span><span class="pct">74%</span></div>
+                </div>
+                <div class="metric-bar-card">
+                    <h4>Donor Dollars — Direct Program Use</h4>
+                    <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+                    <div class="bar-label"><span>Goes directly to programs</span><span class="pct">90%</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annual Report -->
+    <section class="content-section">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title-center">Annual Reports & Transparency</h2>
+            <p style="text-align: center; color: var(--mid-text); max-width: 560px; margin: 0 auto 0.5rem;">We believe in full transparency with our donors and the communities we serve.</p>
+
+            <div class="annual-report-box">
+                <div class="report-icon">📋</div>
+                <div class="report-text">
+                    <h3>2025 Annual Impact Report</h3>
+                    <p>Our 2025 report covers program outcomes, financial summaries, community reach, and stories of impact. We are proud to share every detail of how your donations were used to change lives in Chicago.</p>
+                    <a href="mailto:info@lessfortunate.us?subject=Request: 2025 Annual Report" class="btn-primary" style="display: inline-block;">Request a Copy</a>
+                </div>
+            </div>
+
+            <div class="annual-report-box" style="margin-top: 1rem;">
+                <div class="report-icon">📊</div>
+                <div class="report-text">
+                    <h3>2024 Annual Impact Report</h3>
+                    <p>Our inaugural annual report, documenting our first full year of operations. We served over 200 individuals across all program areas with the generous support of our founding donors.</p>
+                    <a href="mailto:info@lessfortunate.us?subject=Request: 2024 Annual Report" class="btn-primary" style="display: inline-block;">Request a Copy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Story CTA -->
+    <section class="cta-section-full">
+        <div class="container">
+            <h2>Have a Story to Share?</h2>
+            <p>If our programs have made a difference in your life, we would be honored to hear from you</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Share Your Story</a>
+                <a href="donate.html" class="btn-secondary">Help Write More Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Less Fortunate Charity</h4>
+                    <p>Making a positive impact in Chicago and beyond</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="impact.html">Impact Stories</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></li>
+                        <li><strong>Website:</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+1-312-555-0100">(312) 555-0100</a></li>
+                        <li><strong>Address:</strong> 2132 E 72nd St, Chicago, IL 60649</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Less Fortunate Charity. EIN: 99-3459999 | All rights reserved.</p>
+                <p>A 501(c)(3) registered nonprofit organization | <a href="https://lessfortunate.us">https://lessfortunate.us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
