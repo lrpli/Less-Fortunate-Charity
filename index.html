@@ -9,16 +9,18 @@
 </head>
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
   <div class="container">
     <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
-    <span class="top-bar-divider">|</span>
+    <span class="top-bar-divider">·</span>
     <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
-    <span class="top-bar-divider">|</span>
+    <span class="top-bar-divider">·</span>
     <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
   </div>
 </div>
 
+<!-- Navbar -->
 <nav class="navbar">
   <div class="container">
     <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
@@ -29,21 +31,46 @@
       <li><a href="history.html">History</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="team.html">Team</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn-cta">Contact Us</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
+  <div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">501(c)(3) Nonprofit · Chicago, Illinois · EIN 99-3459999</div>
-    <h1>Lifting Our Community,<br>One Family at a Time</h1>
-    <p>Less Fortunate Charity provides emergency relief, education support, and job training to underserved residents of Chicago's South Side.</p>
+    <div class="hero-eyebrow">✦ 501(c)(3) Nonprofit · EIN 99-3459999 · Chicago, Illinois</div>
+    <h1>Lifting Our Community,<br><em>One Family at a Time</em></h1>
+    <p class="hero-sub">Less Fortunate Charity provides emergency relief, education support, and job training to underserved residents of Chicago's South Side.</p>
     <div class="hero-cta">
-      <a href="projects.html" class="btn-primary">Our Programs</a>
+      <a href="projects.html" class="btn-primary">Explore Our Programs</a>
       <a href="contact.html" class="btn-outline">Get in Touch</a>
     </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Lives Assisted</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">Families Served</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">82%</div>
+        <div class="hero-stat-label">Job Success Rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Active Programs</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f7f5f0"/>
+    </svg>
   </div>
 </section>
 
@@ -53,18 +80,18 @@
     <div class="centered">
       <span class="section-label">What We Stand For</span>
       <h2 class="section-title">Our Foundation</h2>
-      <p class="section-subtitle">Built on compassion and driven by results — we exist to serve those who need it most.</p>
+      <p class="section-subtitle">Built on compassion and driven by results — we exist to serve those who need it most in Chicago's South Side.</p>
     </div>
     <div class="cards-grid">
       <div class="card fade-in">
         <div class="card-icon">🎯</div>
         <h3>Mission</h3>
-        <p>To provide essential resources, emergency assistance, and long-term opportunities to individuals and families facing hardship in Chicago.</p>
+        <p>To provide essential resources, emergency assistance, and long-term opportunities to individuals and families facing hardship in the Chicago area.</p>
       </div>
       <div class="card fade-in">
         <div class="card-icon">🌟</div>
         <h3>Vision</h3>
-        <p>A Chicago where every resident — regardless of circumstance — has access to the support they need to thrive with dignity.</p>
+        <p>A Chicago where every resident — regardless of circumstance — has access to the support they need to thrive with dignity and hope.</p>
       </div>
       <div class="card fade-in">
         <div class="card-icon">🤝</div>
@@ -72,15 +99,26 @@
         <p>Compassion, transparency, and accountability guide every program we run and every dollar we spend on behalf of our community.</p>
       </div>
     </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="mission.html" class="btn-secondary">Read Our Full Mission →</a>
+    </div>
   </div>
 </section>
 
+<!-- Wave divider into dark section -->
+<div class="wave-divider" style="background:var(--bg)">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,48 960,0 1440,32 L1440,48 L0,48 Z" fill="#0f2444"/>
+  </svg>
+</div>
+
 <!-- Impact Stats -->
-<section class="section-dark">
+<section class="section-dark" style="padding-top:48px">
   <div class="container">
     <div class="centered">
-      <span class="section-label" style="color:#f9a85d">Our Impact</span>
+      <span class="section-label" style="color:var(--accent-light)">Our Impact</span>
       <h2 class="section-title section-title-white">Making a Measurable Difference</h2>
+      <p class="section-subtitle" style="color:#7a9cc4;margin-left:auto;margin-right:auto;text-align:center">Every program, every volunteer hour, every donation — tracked and accountable.</p>
     </div>
     <div class="stats-grid fade-in">
       <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Lives Directly Assisted</div></div>
@@ -91,42 +129,49 @@
   </div>
 </section>
 
+<!-- Wave divider out of dark section -->
+<div class="wave-divider" style="background:var(--bg-alt)">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,48 C480,0 960,48 1440,16 L1440,0 L0,0 Z" fill="#0f2444"/>
+  </svg>
+</div>
+
 <!-- Featured Programs -->
-<section class="section-alt">
+<section class="section-alt" style="padding-top:48px">
   <div class="container">
     <div class="centered">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">Our Programs</h2>
-      <p class="section-subtitle">Comprehensive services designed to address immediate needs and create lasting change.</p>
+      <p class="section-subtitle">Comprehensive services designed to address immediate needs and create lasting change in people's lives.</p>
     </div>
     <div class="programs-grid">
       <div class="program-card fade-in">
         <div class="program-thumb">🍽️</div>
         <div class="program-body">
           <h3>Emergency Assistance</h3>
-          <p>Food, shelter support, and emergency financial grants for families in crisis.</p>
+          <p>Food, shelter support, and emergency financial grants for families facing crisis situations.</p>
           <a href="projects.html#emergency">Learn More →</a>
         </div>
       </div>
       <div class="program-card fade-in">
-        <div class="program-thumb">📚</div>
+        <div class="program-thumb" style="background:linear-gradient(135deg,#1a4d2e,#2d7a4f)">📚</div>
         <div class="program-body">
           <h3>Education Support</h3>
-          <p>Scholarships, tutoring, and academic mentorship for underprivileged youth.</p>
+          <p>Scholarships, tutoring, and academic mentorship for underprivileged youth in our community.</p>
           <a href="projects.html#education">Learn More →</a>
         </div>
       </div>
       <div class="program-card fade-in">
-        <div class="program-thumb">💼</div>
+        <div class="program-thumb" style="background:linear-gradient(135deg,#7b2d1e,#c96c2a)">💼</div>
         <div class="program-body">
           <h3>Job Training</h3>
-          <p>Career development, resume help, and job placement for adults seeking employment.</p>
+          <p>Career development, resume help, and job placement for adults seeking meaningful employment.</p>
           <a href="projects.html#training">Learn More →</a>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:36px">
-      <a href="projects.html" class="btn-primary">View All Programs</a>
+    <div style="text-align:center;margin-top:40px">
+      <a href="projects.html" class="btn-primary">View All Programs →</a>
     </div>
   </div>
 </section>
@@ -135,8 +180,8 @@
 <section class="cta-banner">
   <div class="container">
     <h2>Ready to Make a Difference?</h2>
-    <p>Your generosity supports families across Chicago's South Side every single day.</p>
-    <a href="contact.html" class="btn-white">Get Involved</a>
+    <p>Your support helps families across Chicago's South Side every single day.</p>
+    <a href="contact.html" class="btn-white">Get Involved Today</a>
     <a href="mission.html" class="btn-outline-white">Our Mission</a>
   </div>
 </section>
@@ -147,7 +192,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h4>Less Fortunate Charity</h4>
-        <p>Serving Chicago's South Side with compassion, integrity, and purpose. Every contribution directly supports our community programs.</p>
+        <p>Serving Chicago's South Side with compassion, integrity, and purpose. Every contribution directly supports life-changing community programs.</p>
         <span class="footer-ein">EIN: 99-3459999</span>
       </div>
       <div>
@@ -173,9 +218,9 @@
       <div>
         <h4>Contact Info</h4>
         <div class="footer-contact-list">
-          <div class="footer-contact-item"><strong>Email</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></div>
-          <div class="footer-contact-item"><strong>Web</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></div>
-          <div class="footer-contact-item"><strong>Address</strong> 2132 E 72nd St, Chicago, IL 60649</div>
+          <div class="footer-contact-item"><strong>Email</strong><a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Web</strong><a href="https://lessfortunate.us">lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Address</strong><span>2132 E 72nd St<br>Chicago, IL 60649</span></div>
         </div>
       </div>
     </div>
