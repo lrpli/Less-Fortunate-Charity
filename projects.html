@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Programs and projects — Less Fortunate Charity, serving Chicago's South Side.">
+  <title>Projects — Less Fortunate Charity</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .project-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .project-thumb {
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+    .project-thumb.blue  { background: linear-gradient(135deg, #1b3a6b, #2558a8); }
+    .project-thumb.green { background: linear-gradient(135deg, #1a4d2e, #2d7a4f); }
+    .project-thumb.warm  { background: linear-gradient(135deg, #7b2d1e, #c96c2a); }
+    .project-thumb.teal  { background: linear-gradient(135deg, #1a4a5a, #2a7a8a); }
+    .project-thumb.purple{ background: linear-gradient(135deg, #3a1a6b, #6a3ab8); }
+    .project-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .project-body p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; flex: 1; }
+    .project-impact {
+      display: inline-block;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 14px;
+    }
+    @media (max-width: 1024px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Our Projects</h1>
+    <p>Programs that address immediate needs and create lasting change in Chicago</p>
+  </div>
+</section>
+
+<!-- Programs Grid -->
+<section class="section">
+  <div class="container">
+    <div class="centered">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Active Programs</h2>
+      <p class="section-subtitle">Five interconnected programs designed to meet people where they are — and help them get where they want to be.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="project-card fade-in" id="emergency">
+        <div class="project-thumb blue">🍽️</div>
+        <div class="project-body">
+          <h3>Emergency Assistance</h3>
+          <p>For families facing unexpected crises — job loss, illness, eviction — our Emergency Assistance program delivers immediate relief. We provide grocery boxes, utility bill support, emergency financial grants, and case management to help families stabilize quickly.</p>
+          <span class="project-impact">100+ families served annually</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" id="education">
+        <div class="project-thumb green">📚</div>
+        <div class="project-body">
+          <h3>Education Support</h3>
+          <p>Education is the surest path out of poverty. We provide after-school tutoring for K–12 students, school supply distributions, scholarship grants for college-bound seniors, and academic mentorship from community volunteers dedicated to student success.</p>
+          <span class="project-impact">Scholarships awarded each year</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" id="training">
+        <div class="project-thumb warm">💼</div>
+        <div class="project-body">
+          <h3>Job Training &amp; Career Development</h3>
+          <p>Our job training program empowers adults with the skills and confidence to find meaningful work. Services include resume writing, interview coaching, digital literacy training, and direct employer connections through our Chicago business network.</p>
+          <span class="project-impact">82% employment rate within 6 months</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" id="health">
+        <div class="project-thumb teal">🏥</div>
+        <div class="project-body">
+          <h3>Health &amp; Wellness</h3>
+          <p>Access to healthcare is a right, not a privilege. We connect community members with health screenings, mental health referrals, wellness education workshops, and assistance navigating health insurance enrollment for uninsured or underinsured residents.</p>
+          <span class="project-impact">Free community health events</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in" id="outreach">
+        <div class="project-thumb purple">📣</div>
+        <div class="project-body">
+          <h3>Community Outreach</h3>
+          <p>We go where people are. Our outreach team partners with local churches, attends community events, and hosts neighborhood resource fairs to ensure that no one falls through the cracks. Seasonal drives include back-to-school, Thanksgiving, and holiday programs.</p>
+          <span class="project-impact">Multiple neighborhood events per year</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Impact Numbers -->
+<section class="section-dark">
+  <div class="container">
+    <div class="centered">
+      <span class="section-label" style="color:#f9a85d">Impact</span>
+      <h2 class="section-title section-title-white">Programs by the Numbers</h2>
+    </div>
+    <div class="stats-grid fade-in">
+      <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Lives Directly Assisted</div></div>
+      <div class="stat-card"><div class="stat-number">100+</div><div class="stat-label">Families Served</div></div>
+      <div class="stat-card"><div class="stat-number">82%</div><div class="stat-label">Job Training Success Rate</div></div>
+      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Active Programs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- How to Apply -->
+<section class="section-alt">
+  <div class="container">
+    <div style="max-width:680px;margin:0 auto;text-align:center">
+      <span class="section-label">Get Help</span>
+      <h2 class="section-title">How to Access Our Programs</h2>
+      <p style="color:var(--text-light);font-size:1.02rem;line-height:1.8;margin-bottom:28px">
+        All of our programs are open to Chicago-area residents. There is no cost to apply. To get started, reach out to us directly — our team will help determine which programs fit your situation and walk you through the process.
+      </p>
+      <a href="contact.html" class="btn-primary">Contact Us to Apply</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Less Fortunate Charity</h4>
+        <p>Serving Chicago's South Side with compassion, integrity, and purpose.</p>
+        <span class="footer-ein">EIN: 99-3459999</span>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="mission.html">Mission</a></li><li><a href="history.html">History</a></li><li><a href="projects.html">Projects</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Organization</h4><ul><li>Less Fortunate Charity</li><li>EIN: 99-3459999</li><li>501(c)(3) Public Charity</li><li>Principal: Patrickson Durand</li></ul></div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><strong>Email</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Web</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Address</strong> 2132 E 72nd St, Chicago, IL 60649</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Less Fortunate Charity · EIN: 99-3459999 · 501(c)(3) Nonprofit</span>
+      <span><a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

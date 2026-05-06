@@ -1,225 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Less Fortunate Charity with questions, inquiries, or to get involved.">
-    <title>Contact Us - Less Fortunate Charity</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Less Fortunate Charity — info@lessfortunate.us · 2132 E 72nd St, Chicago, IL 60649.">
+  <title>Contact — Less Fortunate Charity</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a>
-            <span class="top-bar-divider">|</span>
-            <a href="https://lessfortunate.us">lessfortunate.us</a>
+
+<div class="top-bar">
+  <div class="container">
+    <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We're here to help — reach out any time</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div>
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">We'd Love to Hear From You</h2>
+        <p style="color:var(--text-light);margin-bottom:32px;line-height:1.8">Whether you need assistance, want to volunteer, partner with us, or simply have a question — our team is ready to help.</p>
+
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <h4>Email</h4>
+              <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🌐</div>
+            <div class="contact-item-text">
+              <h4>Website</h4>
+              <a href="https://lessfortunate.us">lessfortunate.us</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <h4>Mailing Address</h4>
+              <p>2132 East 72nd Street<br>Chicago, IL 60649<br>United States</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">👤</div>
+            <div class="contact-item-text">
+              <h4>Principal Officer</h4>
+              <p>Patrickson Durand</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🏛️</div>
+            <div class="contact-item-text">
+              <h4>Tax &amp; Legal</h4>
+              <p>EIN: 99-3459999<br>501(c)(3) Public Charity<br>Donations are tax-deductible</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Map placeholder -->
+        <div class="map-placeholder">
+          <div class="map-icon">📍</div>
+          <strong>2132 E 72nd St, Chicago, IL 60649</strong>
+          <span style="font-size:0.82rem;color:var(--text-muted)">South Side, Chicago · Woodlawn neighborhood</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <div class="card" style="padding:36px">
+          <h3 style="font-family:'Playfair Display',serif;color:var(--primary);font-size:1.3rem;margin-bottom:6px">Send Us a Message</h3>
+          <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:24px">We respond within 1–2 business days.</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="jane@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option value="">Select a topic...</option>
+                <option>Request Assistance</option>
+                <option>Volunteer Inquiry</option>
+                <option>Donation Question</option>
+                <option>Partnership Opportunity</option>
+                <option>General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:inherit;font-size:0.95rem;cursor:pointer">Send Message</button>
+          </form>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html" style="color: inherit; text-decoration: none;">Less Fortunate Charity</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="volunteer.html">Volunteer</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="donate.html" class="btn-donate">Donate Now</a></li>
-            </ul>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Less Fortunate Charity</h4>
+        <p>Serving Chicago's South Side with compassion, integrity, and purpose.</p>
+        <span class="footer-ein">EIN: 99-3459999</span>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="mission.html">Mission</a></li><li><a href="history.html">History</a></li><li><a href="projects.html">Projects</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Organization</h4><ul><li>Less Fortunate Charity</li><li>EIN: 99-3459999</li><li>501(c)(3) Public Charity</li><li>Principal: Patrickson Durand</li></ul></div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><strong>Email</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Web</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Address</strong> 2132 E 72nd St, Chicago, IL 60649</div>
         </div>
-    </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Less Fortunate Charity · EIN: 99-3459999 · 501(c)(3) Nonprofit</span>
+      <span><a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    </div>
+  </div>
+</footer>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you. Get in touch with any questions or inquiries.</p>
-        </div>
-    </section>
-
-    <!-- Contact Content -->
-    <section class="content-section">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-methods">
-                    <h2>Get in Touch</h2>
-                    
-                    <div class="contact-method">
-                        <h3>📧 Email</h3>
-                        <p><a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></p>
-                        <p class="detail">For general inquiries and information</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>📞 Phone</h3>
-                        <p><a href="tel:+1-312-555-0100">(312) 555-0100</a></p>
-                        <p class="detail">Monday - Friday, 9 AM - 5 PM CST</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>📍 Physical Address</h3>
-                        <p>Less Fortunate Charity</p>
-                        <p>2132 E 72nd St</p>
-                        <p>Chicago, IL 60649</p>
-                        <p class="detail">Visit office by appointment</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>🕐 Office Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 5:00 PM CST</p>
-                        <p>Saturday: 10:00 AM - 2:00 PM CST</p>
-                        <p>Sunday: Closed</p>
-                    </div>
-
-                    <div class="social-section">
-                        <h3>Follow Us</h3>
-                        <div class="social-links">
-                            <a href="https://facebook.com/lessfortunatecharity" class="social-icon" title="Facebook">f</a>
-                            <a href="https://twitter.com/lessfortunate" class="social-icon" title="Twitter">𝕏</a>
-                            <a href="https://instagram.com/lessfortunatecharity" class="social-icon" title="Instagram">📷</a>
-                            <a href="https://linkedin.com/company/lessfortunatecharity" class="social-icon" title="LinkedIn">in</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <h2>Send Us a Message</h2>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="donation">Donation Inquiry</option>
-                                <option value="volunteer">Volunteer Opportunities</option>
-                                <option value="service">Program/Service Inquiry</option>
-                                <option value="partnership">Partnership/Corporate</option>
-                                <option value="media">Media Inquiry</option>
-                                <option value="general">General Question</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-
-                        <div class="form-group checkbox">
-                            <input type="checkbox" id="newsletter" name="newsletter">
-                            <label for="newsletter">Subscribe to our newsletter</label>
-                        </div>
-
-                        <button type="submit" class="btn-primary btn-lg">Send Message</button>
-                        <p class="form-note">We'll respond to your inquiry within 24 business hours.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Support Options -->
-    <section class="content-section light-bg">
-        <div class="container">
-            <h2 class="section-title-center">How Can We Help?</h2>
-            <div class="three-column">
-                <div class="help-card">
-                    <h3>🙋 Need Assistance?</h3>
-                    <p>If you or someone you know needs help with emergency assistance, food support, or other services, contact us immediately.</p>
-                    <a href="programs.html" class="btn-secondary">Learn About Programs</a>
-                </div>
-                <div class="help-card">
-                    <h3>❤️ Want to Donate?</h3>
-                    <p>Ready to support our cause? We offer various giving options including one-time donations and recurring support.</p>
-                    <a href="donate.html" class="btn-secondary">Make a Donation</a>
-                </div>
-                <div class="help-card">
-                    <h3>🤝 Looking to Volunteer?</h3>
-                    <p>Join our team of dedicated volunteers! We have many opportunities to contribute your time and skills.</p>
-                    <a href="contact.html" class="btn-secondary">Volunteer with Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Less Fortunate Charity</h4>
-                    <p>Making a positive impact in Chicago and beyond</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="volunteer.html">Volunteer</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="impact.html">Impact Stories</a></li>
-                        <li><a href="partners.html">Partners</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><strong>Email:</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></li>
-                        <li><strong>Website:</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></li>
-                        <li><strong>Phone:</strong> <a href="tel:+1-312-555-0100">(312) 555-0100</a></li>
-                        <li><strong>Address:</strong> 2132 E 72nd St, Chicago, IL 60649</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#accessibility">Accessibility</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Less Fortunate Charity. EIN: 99-3459999 | All rights reserved.</p>
-                <p>A 501(c)(3) registered nonprofit organization | <a href="https://lessfortunate.us">https://lessfortunate.us</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

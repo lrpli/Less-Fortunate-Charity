@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="History of Less Fortunate Charity — our founding story and milestones in Chicago.">
+  <title>History — Less Fortunate Charity</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline { position: relative; max-width: 720px; margin: 0 auto; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .timeline-marker {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-align: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      line-height: 1.2;
+    }
+    .timeline-marker.accent { background: var(--accent); }
+    .timeline-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 26px;
+    }
+    .timeline-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .timeline-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .timeline-card p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 480px) {
+      .timeline-item { grid-template-columns: 44px 1fr; gap: 16px; }
+      .timeline-marker { width: 44px; height: 44px; font-size: 0.72rem; }
+      .timeline::before { left: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    <span class="top-bar-divider">|</span>
+    <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="history.html" class="active">History</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Our History</h1>
+    <p>How a neighborhood commitment became a recognized nonprofit</p>
+  </div>
+</section>
+
+<!-- Founding Story -->
+<section class="section">
+  <div class="container">
+    <div style="max-width:780px;margin:0 auto">
+      <span class="section-label">The Beginning</span>
+      <h2 class="section-title">Built on a Simple Belief</h2>
+      <p style="color:var(--text-light);font-size:1.05rem;line-height:1.8;margin-bottom:20px">
+        Less Fortunate Charity was born from a straightforward conviction: neighbors should look out for one another. Founded by Patrickson Durand at 2132 East 72nd Street on Chicago's South Side, the organization started small — a few people, a few resources, and an unwavering commitment to the families around them.
+      </p>
+      <p style="color:var(--text-light);font-size:1.05rem;line-height:1.8">
+        What began as informal assistance to community members in need gradually took shape as a structured nonprofit — one with programs, volunteers, donors, and measurable impact. Today, Less Fortunate Charity holds 501(c)(3) federal tax-exempt status (EIN: 99-3459999) and continues to grow its reach across Chicago.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section-alt">
+  <div class="container">
+    <div class="centered" style="margin-bottom:48px">
+      <span class="section-label">Milestones</span>
+      <h2 class="section-title">Our Journey</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker">START</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">Founding</div>
+          <h3>Patrickson Durand Establishes Less Fortunate Charity</h3>
+          <p>At 2132 East 72nd Street in Chicago, Patrickson Durand formally establishes Less Fortunate Charity. The organization begins with a simple mission: to meet the immediate needs of less fortunate individuals and families on Chicago's South Side.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker">FOOD</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">First Programs</div>
+          <h3>Emergency Food Pantry &amp; Crisis Assistance Launch</h3>
+          <p>The organization launches its first formal program — an emergency food pantry providing grocery assistance to families in crisis. Utility support and emergency financial grants soon follow, responding to the community's most urgent needs.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker">IRS</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">501(c)(3) Recognition</div>
+          <h3>Federal Tax-Exempt Status Granted</h3>
+          <p>Less Fortunate Charity receives IRS recognition as a 501(c)(3) tax-exempt public charity (EIN: 99-3459999). This milestone enables donors to contribute with full tax deductibility and opens the door to grant funding and institutional partnerships.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker">EDU</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">Programs Expand</div>
+          <h3>Education Support Program Launched</h3>
+          <p>Recognizing that emergency aid alone cannot break cycles of poverty, the organization launches its Education Support Program — providing tutoring, school supplies, scholarships, and academic mentorship to K–12 students in the community.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker">JOBS</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">Career Development</div>
+          <h3>Job Training &amp; Career Development Program Added</h3>
+          <p>The Job Training program launches, empowering adults with resume writing, interview coaching, and job placement support. Within its first cohort, 82% of participants secure employment within six months — a benchmark the program maintains to this day.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-marker accent">NOW</div>
+        <div class="timeline-card">
+          <div class="timeline-tag">Today</div>
+          <h3>500+ Lives Touched &amp; Growing</h3>
+          <p>Less Fortunate Charity now operates five active programs, serves 100+ families annually, and relies on a growing network of volunteers and donors. From a single address on East 72nd Street, the organization continues to expand its reach and deepen its impact across Chicago.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Be Part of Our Next Chapter</h2>
+    <p>The story of Less Fortunate Charity is still being written — and you can help write it.</p>
+    <a href="contact.html" class="btn-white">Get Involved</a>
+    <a href="projects.html" class="btn-outline-white">Our Programs</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Less Fortunate Charity</h4>
+        <p>Serving Chicago's South Side with compassion, integrity, and purpose.</p>
+        <span class="footer-ein">EIN: 99-3459999</span>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="mission.html">Mission</a></li><li><a href="history.html">History</a></li><li><a href="projects.html">Projects</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Organization</h4><ul><li>Less Fortunate Charity</li><li>EIN: 99-3459999</li><li>501(c)(3) Public Charity</li><li>Principal: Patrickson Durand</li></ul></div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><strong>Email</strong> <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Web</strong> <a href="https://lessfortunate.us">lessfortunate.us</a></div>
+          <div class="footer-contact-item"><strong>Address</strong> 2132 E 72nd St, Chicago, IL 60649</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Less Fortunate Charity · EIN: 99-3459999 · 501(c)(3) Nonprofit</span>
+      <span><a href="https://lessfortunate.us">lessfortunate.us</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
