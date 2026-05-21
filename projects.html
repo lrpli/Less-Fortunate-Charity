@@ -23,17 +23,17 @@
     }
     .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
     .project-thumb {
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.2rem;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
     }
-    .project-thumb.blue  { background: linear-gradient(135deg, #1b3a6b, #2558a8); }
-    .project-thumb.green { background: linear-gradient(135deg, #1a4d2e, #2d7a4f); }
-    .project-thumb.warm  { background: linear-gradient(135deg, #7b2d1e, #c96c2a); }
-    .project-thumb.teal  { background: linear-gradient(135deg, #1a4a5a, #2a7a8a); }
-    .project-thumb.purple{ background: linear-gradient(135deg, #3a1a6b, #6a3ab8); }
+    .project-thumb.blue  { background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80'); }
+    .project-thumb.green { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80'); }
+    .project-thumb.warm  { background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80'); }
+    .project-thumb.teal  { background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80'); }
+    .project-thumb.purple{ background-image: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80'); }
     .project-body {
       padding: 24px;
       flex: 1;
@@ -113,7 +113,7 @@
     <div class="project-grid">
 
       <div class="project-card fade-in" id="emergency">
-        <div class="project-thumb blue">🍽️</div>
+        <div class="project-thumb blue"></div>
         <div class="project-body">
           <h3>Emergency Assistance</h3>
           <p>For families facing unexpected crises — job loss, illness, eviction — our Emergency Assistance program delivers immediate relief. We provide grocery boxes, utility bill support, emergency financial grants, and case management to help families stabilize quickly.</p>
@@ -122,7 +122,7 @@
       </div>
 
       <div class="project-card fade-in" id="education">
-        <div class="project-thumb green">📚</div>
+        <div class="project-thumb green"></div>
         <div class="project-body">
           <h3>Education Support</h3>
           <p>Education is the surest path out of poverty. We provide after-school tutoring for K–12 students, school supply distributions, scholarship grants for college-bound seniors, and academic mentorship from community volunteers dedicated to student success.</p>
@@ -131,7 +131,7 @@
       </div>
 
       <div class="project-card fade-in" id="training">
-        <div class="project-thumb warm">💼</div>
+        <div class="project-thumb warm"></div>
         <div class="project-body">
           <h3>Job Training &amp; Career Development</h3>
           <p>Our job training program empowers adults with the skills and confidence to find meaningful work. Services include resume writing, interview coaching, digital literacy training, and direct employer connections through our Chicago business network.</p>
@@ -140,7 +140,7 @@
       </div>
 
       <div class="project-card fade-in" id="health">
-        <div class="project-thumb teal">🏥</div>
+        <div class="project-thumb teal"></div>
         <div class="project-body">
           <h3>Health &amp; Wellness</h3>
           <p>Access to healthcare is a right, not a privilege. We connect community members with health screenings, mental health referrals, wellness education workshops, and assistance navigating health insurance enrollment for uninsured or underinsured residents.</p>
@@ -149,7 +149,7 @@
       </div>
 
       <div class="project-card fade-in" id="outreach">
-        <div class="project-thumb purple">📣</div>
+        <div class="project-thumb purple"></div>
         <div class="project-body">
           <h3>Community Outreach</h3>
           <p>We go where people are. Our outreach team partners with local churches, attends community events, and hosts neighborhood resource fairs to ensure that no one falls through the cracks. Seasonal drives include back-to-school, Thanksgiving, and holiday programs.</p>
