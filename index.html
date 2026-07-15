@@ -6,17 +6,23 @@
   <meta name="description" content="Less Fortunate Charity — serving Chicago's South Side with compassion. EIN: 99-3459999.">
   <title>Less Fortunate Charity — Chicago, IL</title>
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 
 <!-- Top Bar -->
 <div class="top-bar">
   <div class="container">
-    <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
-    <span class="top-bar-divider">·</span>
-    <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
-    <span class="top-bar-divider">·</span>
-    <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+    <div class="top-bar-left">
+      <span class="top-bar-ein"><span class="top-bar-ein-tag">501(c)(3)</span> EIN 99-3459999</span>
+    </div>
+    <div class="top-bar-right">
+      <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
+      <span class="top-bar-divider">·</span>
+      <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
+      <span class="top-bar-divider">·</span>
+      <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+    </div>
   </div>
 </div>
 
@@ -24,7 +30,7 @@
 <nav class="navbar">
   <div class="container">
     <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="mission.html">Mission</a></li>
@@ -40,7 +46,7 @@
 <section class="hero">
   <div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">✦ 501(c)(3) Nonprofit · EIN 99-3459999 · Chicago, Illinois</div>
+    <div class="hero-eyebrow">✦ 501(c)(3) Nonprofit · Chicago, Illinois</div>
     <h1>Lifting Our Community,<br><em>One Family at a Time</em></h1>
     <p class="hero-sub">Less Fortunate Charity provides emergency relief, education support, and job training to underserved residents of Chicago's South Side.</p>
     <div class="hero-cta">
@@ -146,7 +152,7 @@
     </div>
     <div class="programs-grid">
       <div class="program-card fade-in">
-        <div class="program-thumb program-thumb-photo" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80')"></div>
+        <div class="program-thumb program-thumb-photo" style="background-image:url('images/program-emergency.jpg')"></div>
         <div class="program-body">
           <h3>Emergency Assistance</h3>
           <p>Food, shelter support, and emergency financial grants for families facing crisis situations.</p>
@@ -154,7 +160,7 @@
         </div>
       </div>
       <div class="program-card fade-in">
-        <div class="program-thumb program-thumb-photo" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80')"></div>
+        <div class="program-thumb program-thumb-photo" style="background-image:url('images/program-education.jpg')"></div>
         <div class="program-body">
           <h3>Education Support</h3>
           <p>Scholarships, tutoring, and academic mentorship for underprivileged youth in our community.</p>
@@ -162,7 +168,7 @@
         </div>
       </div>
       <div class="program-card fade-in">
-        <div class="program-thumb program-thumb-photo" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80')"></div>
+        <div class="program-thumb program-thumb-photo" style="background-image:url('images/program-job-training.jpg')"></div>
         <div class="program-body">
           <h3>Job Training</h3>
           <p>Career development, resume help, and job placement for adults seeking meaningful employment.</p>
@@ -186,19 +192,19 @@
     </div>
     <div class="photo-grid">
       <div class="photo-tile photo-tile-large">
-        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Volunteers distributing food at a community event" loading="lazy">
+        <img src="images/gallery-food-drive.jpg" alt="Volunteers distributing food at a community event" loading="lazy">
       </div>
       <div class="photo-tile">
-        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80" alt="Community volunteers working together" loading="lazy">
+        <img src="images/gallery-volunteers.jpg" alt="Community volunteers working together" loading="lazy">
       </div>
       <div class="photo-tile">
-        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80" alt="Children learning in an education program" loading="lazy">
+        <img src="images/gallery-education.jpg" alt="Children learning in an education program" loading="lazy">
       </div>
       <div class="photo-tile">
-        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80" alt="Neighbors helping neighbors in the community" loading="lazy">
+        <img src="images/program-community.jpg" alt="Neighbors helping neighbors in the community" loading="lazy">
       </div>
       <div class="photo-tile">
-        <img src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?w=600&q=80" alt="Job training workshop participants" loading="lazy">
+        <img src="images/gallery-workshop.jpg" alt="Job training workshop participants" loading="lazy">
       </div>
     </div>
   </div>

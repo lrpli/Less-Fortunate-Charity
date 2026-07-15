@@ -116,16 +116,19 @@ A comprehensive, professional, and fully functional website for Less Fortunate C
 ```
 Less-Fortunate-Charity/
 ├── index.html          # Home page
-├── about.html          # About the organization
-├── programs.html       # Detailed programs
-├── blog.html           # News and updates
-├── donate.html         # Donation page
+├── mission.html        # Mission, vision & values
+├── history.html        # Organization history & timeline
+├── projects.html       # Programs & projects
+├── team.html           # Leadership & staff
 ├── contact.html        # Contact & forms
-├── faq.html            # FAQ & Help
 ├── style.css           # All styling & responsiveness
 ├── script.js           # Interactive functionality
+├── images/             # Local photography (hero, programs, gallery)
 └── README.md           # Documentation
 ```
+
+All imagery is stored locally in `images/` — the site makes no external
+image requests. Fonts are still loaded from Google Fonts via `style.css`.
 
 ## 🚀 Getting Started
 

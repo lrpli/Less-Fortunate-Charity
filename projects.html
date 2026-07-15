@@ -6,77 +6,30 @@
   <meta name="description" content="Programs and projects — Less Fortunate Charity, serving Chicago's South Side.">
   <title>Projects — Less Fortunate Charity</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .project-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-    .project-thumb {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
-    .project-thumb.blue  { background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80'); }
-    .project-thumb.green { background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80'); }
-    .project-thumb.warm  { background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80'); }
-    .project-thumb.teal  { background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80'); }
-    .project-thumb.purple{ background-image: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80'); }
-    .project-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .project-body p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; flex: 1; }
-    .project-impact {
-      display: inline-block;
-      background: #eef2ff;
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-top: 14px;
-    }
-    @media (max-width: 1024px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
-  </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
   <div class="container">
-    <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
-    <span class="top-bar-divider">|</span>
-    <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
-    <span class="top-bar-divider">|</span>
-    <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+    <div class="top-bar-left">
+      <span class="top-bar-ein"><span class="top-bar-ein-tag">501(c)(3)</span> EIN 99-3459999</span>
+    </div>
+    <div class="top-bar-right">
+      <span class="top-bar-item">✉ <a href="mailto:info@lessfortunate.us">info@lessfortunate.us</a></span>
+      <span class="top-bar-divider">·</span>
+      <span class="top-bar-item">🌐 <a href="https://lessfortunate.us">lessfortunate.us</a></span>
+      <span class="top-bar-divider">·</span>
+      <span class="top-bar-item">📍 2132 E 72nd St, Chicago, IL 60649</span>
+    </div>
   </div>
 </div>
 
 <nav class="navbar">
   <div class="container">
     <div class="nav-brand"><a href="index.html">Less Fortunate Charity</a></div>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="mission.html">Mission</a></li>

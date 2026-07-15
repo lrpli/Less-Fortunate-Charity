@@ -45,6 +45,35 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 ul { list-style: none; }
 
+::selection { background: rgba(224,124,42,0.22); color: var(--text); }
+
+/* Keyboard focus must stay visible everywhere, including on the dark navy sections. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+.top-bar :focus-visible,
+.hero :focus-visible,
+.section-dark :focus-visible,
+.cta-banner :focus-visible,
+.footer :focus-visible { outline-color: var(--gold); }
+
+/* The navbar is sticky, so in-page anchors would otherwise land underneath it. */
+[id] { scroll-margin-top: 92px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* !important: the .fade-in{opacity:0} base rule is defined later in this file. */
+  .fade-in { opacity: 1 !important; transform: none !important; }
+}
+
 /* ===== CONTAINER ===== */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
 
@@ -61,14 +90,47 @@ ul { list-style: none; }
 .top-bar .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 14px 20px;
+  flex-wrap: wrap;
+}
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   flex-wrap: wrap;
 }
 .top-bar-item { display: flex; align-items: center; gap: 7px; }
 .top-bar a { color: var(--topbar-text); transition: color 0.2s; }
 .top-bar a:hover { color: var(--accent-light); text-decoration: none; }
 .top-bar-divider { color: #2a4a72; font-size: 0.7rem; }
+
+/* EIN badge — the org's registration identity, held at the far left */
+.top-bar-ein {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224,124,42,0.12);
+  border: 1px solid rgba(224,124,42,0.30);
+  color: #f0d0b0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 3px 12px 3px 4px;
+  border-radius: 40px;
+  white-space: nowrap;
+}
+.top-bar-ein-tag {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 9px;
+  border-radius: 40px;
+  line-height: 1.5;
+}
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -138,6 +200,10 @@ ul { list-style: none; }
   padding: 6px;
   border-radius: 8px;
   transition: background 0.15s;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
 }
 .nav-toggle:hover { background: var(--bg); }
 .nav-toggle span {
@@ -152,7 +218,7 @@ ul { list-style: none; }
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  background: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600&q=85') center center / cover no-repeat;
+  background: url('images/hero-community.jpg') center center / cover no-repeat;
   color: #fff;
   padding: 110px 0 130px;
   text-align: center;
@@ -592,6 +658,15 @@ ul { list-style: none; }
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Matches .project-thumb::before so cards read consistently across pages. */
+.program-thumb-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15,36,68,0.42) 0%, rgba(27,58,107,0.14) 55%, rgba(15,36,68,0.30) 100%);
+  transition: opacity 0.3s ease;
+}
+.program-card:hover .program-thumb-photo::before { opacity: 0.5; }
 .program-thumb::after {
   content: '';
   position: absolute;
@@ -1093,14 +1168,23 @@ textarea { resize: vertical; min-height: 130px; }
 }
 .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); }
 .project-thumb {
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.2rem;
+  height: 176px;
   position: relative;
   overflow: hidden;
+  background-color: var(--primary);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+/* Brand tint keeps five different stock photos reading as one coherent set. */
+.project-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15,36,68,0.42) 0%, rgba(27,58,107,0.14) 55%, rgba(15,36,68,0.30) 100%);
+  transition: opacity 0.3s ease;
+}
+.project-card:hover .project-thumb::before { opacity: 0.5; }
 .project-thumb::after {
   content: '';
   position: absolute;
@@ -1110,12 +1194,13 @@ textarea { resize: vertical; min-height: 130px; }
   height: 30px;
   background: var(--bg-alt);
   clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 1;
 }
-.project-thumb.blue   { background: linear-gradient(135deg, #1b3a6b, #2558a8); }
-.project-thumb.green  { background: linear-gradient(135deg, #1a4d2e, #2d7a4f); }
-.project-thumb.warm   { background: linear-gradient(135deg, #7b2d1e, #c96c2a); }
-.project-thumb.teal   { background: linear-gradient(135deg, #1a4a5a, #2a7a8a); }
-.project-thumb.purple { background: linear-gradient(135deg, #3a1a6b, #6a3ab8); }
+.project-thumb.blue   { background-image: url('images/program-emergency.jpg'); }
+.project-thumb.green  { background-image: url('images/program-education.jpg'); }
+.project-thumb.warm   { background-image: url('images/program-job-training.jpg'); }
+.project-thumb.teal   { background-image: url('images/program-health.jpg'); }
+.project-thumb.purple { background-image: url('images/program-community.jpg'); }
 .project-body { padding: 18px 24px 28px; flex: 1; display: flex; flex-direction: column; }
 .project-body h3 {
   font-family: 'Playfair Display', serif;
@@ -1127,6 +1212,8 @@ textarea { resize: vertical; min-height: 130px; }
 .project-body p { color: var(--text-light); font-size: 0.9rem; line-height: 1.65; flex: 1; }
 .project-impact {
   display: inline-block;
+  /* .project-body is a flex column, which would stretch this pill to full width. */
+  align-self: flex-start;
   background: linear-gradient(135deg, #eef3fc, #e4ecf8);
   color: var(--primary);
   font-size: 0.76rem;
@@ -1148,6 +1235,11 @@ textarea { resize: vertical; min-height: 130px; }
 }
 
 @media (max-width: 768px) {
+  /* Stack the bar and centre it; the EIN badge keeps its own line above contact details. */
+  .top-bar .container { justify-content: center; gap: 8px; }
+  .top-bar-left, .top-bar-right { justify-content: center; width: 100%; }
+  .top-bar-right { gap: 10px; font-size: 0.74rem; }
+
   .nav-toggle { display: flex; }
   .nav-links {
     display: none;
@@ -1196,21 +1288,42 @@ textarea { resize: vertical; min-height: 130px; }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .form-card { padding: 28px 20px; }
+  /* The street address is the least useful item here and the first to wrap badly.
+     Children are: item, divider, item, divider(4th), item(5th) — drop the last pair.
+     (:last-of-type would count spans by type and match the wrong element.) */
+  .top-bar-right .top-bar-item:last-child,
+  .top-bar-right .top-bar-divider:nth-child(4) { display: none; }
 }
 
 /* ===== PHOTO GRID ===== */
+/* 4 cols x 2 rows = 8 cells: the large tile takes 2x2, the 4 small tiles fill the rest exactly. */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 240px 200px;
-  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 220px 220px;
+  gap: 14px;
   margin-top: 40px;
 }
 .photo-tile {
-  border-radius: 12px;
+  position: relative;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-alt);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+/* Brand-tinted veil so the photos read as one set rather than five stock images */
+.photo-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,36,68,0) 45%, rgba(15,36,68,0.34) 100%);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.photo-tile:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.photo-tile:hover::after { opacity: 0.45; }
 .photo-tile-large {
   grid-column: span 2;
   grid-row: span 2;
@@ -1220,10 +1333,10 @@ textarea { resize: vertical; min-height: 130px; }
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 .photo-tile:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 @media (max-width: 768px) {
   .photo-grid {

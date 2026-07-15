@@ -2,12 +2,22 @@
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
+  const setNav = (open) => {
+    navLinks.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  };
   navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    setNav(!navLinks.classList.contains('open'));
   });
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('open');
+      setNav(false);
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      setNav(false);
+      navToggle.focus();
     }
   });
 }
@@ -15,15 +25,21 @@ if (navToggle && navLinks) {
 // Fade-in on scroll
 const fadeEls = document.querySelectorAll('.fade-in');
 if (fadeEls.length) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.classList.add('visible');
-        observer.unobserve(el.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  fadeEls.forEach(el => observer.observe(el));
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Without IntersectionObserver the .fade-in base rule would leave content stuck at opacity 0.
+  if (reduced || !('IntersectionObserver' in window)) {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+  }
 }
 
 // Donation amount buttons
