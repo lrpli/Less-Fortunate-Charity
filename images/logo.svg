@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Less Fortunate Charity">
+  <defs>
+    <linearGradient id="lfcBadge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2558a8"/>
+      <stop offset="1" stop-color="#0f2444"/>
+    </linearGradient>
+    <linearGradient id="lfcHeart" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d7e6fa"/>
+    </linearGradient>
+    <linearGradient id="lfcHand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5a55a"/>
+      <stop offset="1" stop-color="#e07c2a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="48" height="48" rx="12" fill="url(#lfcBadge)"/>
+
+  <!-- Heart, held above the palm -->
+  <path d="M24 27.2c-.45 0-8.5-5.35-8.5-10.3 0-2.8 2.15-5.05 4.85-5.05 1.6 0 3 .8 3.65 2 .65-1.2 2.05-2 3.65-2 2.7 0 4.85 2.25 4.85 5.05 0 4.95-8.05 10.3-8.5 10.3z"
+        fill="url(#lfcHeart)"/>
+
+  <!-- Cupped palm: a solid crescent, so it reads as support rather than a smile -->
+  <path d="M11.4 29.6h4.1c.85 4.35 4.2 7.1 8.5 7.1s7.65-2.75 8.5-7.1h4.1c-.9 6.7-6.05 11.2-12.6 11.2s-11.7-4.5-12.6-11.2z"
+        fill="url(#lfcHand)"/>
+</svg>

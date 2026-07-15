@@ -132,6 +132,20 @@ ul { list-style: none; }
   line-height: 1.5;
 }
 
+/* Top bar responsive: drop items as space runs out so the bar never exceeds
+   two lines. Order of sacrifice: street address, then the website link
+   (redundant — the visitor is already on the site). The EIN badge always stays. */
+@media (max-width: 900px) {
+  .top-bar-right .top-bar-item:last-child,
+  .top-bar-right .top-bar-divider:nth-child(4) { display: none; }
+}
+@media (max-width: 640px) {
+  .top-bar { font-size: 0.72rem; }
+  .top-bar .container { justify-content: center; gap: 6px 14px; }
+  .top-bar-right .top-bar-item:nth-child(3),
+  .top-bar-right .top-bar-divider:nth-child(2) { display: none; }
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: sticky;
@@ -156,8 +170,22 @@ ul { list-style: none; }
   white-space: nowrap;
   letter-spacing: -0.01em;
 }
-.nav-brand a { color: inherit; }
+.nav-brand a {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
 .nav-brand a:hover { text-decoration: none; }
+.nav-logo {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(27,58,107,0.22);
+  transition: transform 0.2s ease;
+}
+.nav-brand a:hover .nav-logo { transform: rotate(-4deg) scale(1.05); }
 
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-links li a {
@@ -1000,6 +1028,17 @@ textarea { resize: vertical; min-height: 130px; }
   margin-bottom: 18px;
   font-weight: 700;
 }
+.footer-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
 .footer-brand p {
   font-size: 0.87rem;
   line-height: 1.75;
@@ -1235,11 +1274,6 @@ textarea { resize: vertical; min-height: 130px; }
 }
 
 @media (max-width: 768px) {
-  /* Stack the bar and centre it; the EIN badge keeps its own line above contact details. */
-  .top-bar .container { justify-content: center; gap: 8px; }
-  .top-bar-left, .top-bar-right { justify-content: center; width: 100%; }
-  .top-bar-right { gap: 10px; font-size: 0.74rem; }
-
   .nav-toggle { display: flex; }
   .nav-links {
     display: none;
@@ -1288,11 +1322,6 @@ textarea { resize: vertical; min-height: 130px; }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .form-card { padding: 28px 20px; }
-  /* The street address is the least useful item here and the first to wrap badly.
-     Children are: item, divider, item, divider(4th), item(5th) — drop the last pair.
-     (:last-of-type would count spans by type and match the wrong element.) */
-  .top-bar-right .top-bar-item:last-child,
-  .top-bar-right .top-bar-divider:nth-child(4) { display: none; }
 }
 
 /* ===== PHOTO GRID ===== */
